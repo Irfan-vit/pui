@@ -1,0 +1,15 @@
+import styled from 'styled-components'
+import { FaBars } from 'react-icons/fa'
+FaBars
+const StyledSideNavWrapper = styled.div``
+
+const SideNav = () => {
+  return (
+    <StyledSideNavWrapper>
+      <aside>
+        <a href="#main-menu"></a>
+      </aside>
+    </StyledSideNavWrapper>
+  )
+}
+export default SideNav

@@ -1,0 +1,20 @@
+import getProducts from '../queries/getProducts'
+import { useQuery } from '@tanstack/react-query'
+// import { filterCategory } from '../utils/filterCategory'
+// import { useFilter } from '../context/filter/filterContext'
+
+const useFilteredProducts = () => {
+  // const { filterState } = useFilter()
+  const products = useQuery(['products'], getProducts)
+  const results = []
+  console.log(products.data)
+  // const result = filterCategory(filterState, products?.data ?? [])
+  products.isLoading
+    ? results.push(
+        products?.data.filter((e) => e.categoryName === 'mens') ?? [],
+      )
+    : []
+  return [results, products]
+}
+
+export default useFilteredProducts
