@@ -12,7 +12,7 @@ import {
   Hr,
 } from './SideBarStyles'
 
-const SideNav = () => {
+const SideBar = () => {
   const { filterDispatch, filterState } = useFilterProducts()
   return (
     <>
@@ -153,4 +153,4 @@ const SideNav = () => {
     </>
   )
 }
-export default SideNav
+export default SideBar

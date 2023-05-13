@@ -1,11 +1,11 @@
 import styled from 'styled-components'
 
 import NavBar from '../components/navBar/NavBar'
-import SideNav from '../components/SideBar/SideBar'
 import Footer from '../components/footer/Footer'
 import { useProducts } from '../context/getProductsContext'
 import ProductCards from './products/ProductCards'
 import Skeleton from '../components/animations/Loaders/Skeleton'
+import SideBar from '../components/sideBar'
 
 const ProductsWrapper = styled.div`
   display: flex;
@@ -44,7 +44,7 @@ const Products = () => {
     <ProductsWrapper>
       <NavBar />
       <div>
-        <SideNav />
+        <SideBar />
         {productsQuery.isLoading ? (
           <>
             <div>
