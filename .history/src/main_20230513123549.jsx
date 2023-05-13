@@ -17,7 +17,6 @@ import './utils/css/colors.css'
 import './utils/css/typography.css'
 import { WishlistProvider } from './context/wishlistContext'
 import { ToastProvider } from './context/toastContext'
-import { CartProvider } from './context/cartContext'
 import ToastContainer from './components/toast/ToastContainer'
 
 const queryClient = new QueryClient({
