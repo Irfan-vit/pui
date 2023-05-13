@@ -5,7 +5,7 @@ import Footer from '../components/footer/Footer'
 import { useProducts } from '../context/getProductsContext'
 import ProductCards from './products/ProductCards'
 import Skeleton from '../components/animations/Loaders/Skeleton'
-import SideBar from '../components/sideBar'
+import SideBar from '../components/sideBar/SideBar'
 
 const ProductsWrapper = styled.div`
   display: flex;
