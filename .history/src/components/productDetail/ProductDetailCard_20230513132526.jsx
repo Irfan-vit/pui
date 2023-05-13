@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import useFilteredProducts from '../../hooks/useFilteredProducts'
 import { Button } from '../buttons/Primary'
-import { useCart } from '../../context/cartContext'
+import { useCart } from '../../context/cartontext'
 import { useWishlist } from '../../context/wishlistContext'
 import { useToast } from '../../context/toastContext'
 
