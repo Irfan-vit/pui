@@ -19,6 +19,7 @@ import { CartProvider } from './context/cartcontext.jsx'
 import { WishlistProvider } from './context/wishlistContext'
 import { ToastProvider } from './context/toastContext'
 import ToastContainer from './components/toast/ToastContainer'
+import ProductDetail from './components/productDetail/ProductDetail.jsx'
 
 const queryClient = new QueryClient({
   defaultOptions: {

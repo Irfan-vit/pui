@@ -15,10 +15,11 @@ import MoveUp from './components/animations/Floats/MoveUp'
 
 import './utils/css/colors.css'
 import './utils/css/typography.css'
-import { CartProvider } from './context/cartcontext.jsx'
+import 
 import { WishlistProvider } from './context/wishlistContext'
 import { ToastProvider } from './context/toastContext'
 import ToastContainer from './components/toast/ToastContainer'
+import ProductDetail from './components/productDetail/ProductDetail.jsx'
 
 const queryClient = new QueryClient({
   defaultOptions: {
