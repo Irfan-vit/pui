@@ -5,7 +5,7 @@ import { AiOutlineShoppingCart, AiOutlineHeart } from 'react-icons/ai'
 import { MdShoppingCartCheckout } from 'react-icons/md'
 import { FaHeartBroken } from 'react-icons/fa'
 
-import { useCart } from '../../context/cartContext'
+import { useCart } from '../../context/cartcontext'
 import { useWishlist } from '../../context/wishlistContext'
 
 const WishlistCard = ({

@@ -5,10 +5,12 @@ import { AiOutlineShoppingCart, AiOutlineHeart } from 'react-icons/ai'
 import { MdShoppingCartCheckout } from 'react-icons/md'
 import { FaHeartBroken } from 'react-icons/fa'
 
-import { useCart } from '../../context/cartContext'
+import { useCart } from '../../context/cartontext'
 import { useWishlist } from '../../context/wishlistContext'
+import { useToast } from '../../context/toastContext'
+import { Link } from 'react-router-dom'
 
-const WishlistCard = ({
+const ProductCard = ({
   _id,
   title,
   price,
@@ -18,8 +20,9 @@ const WishlistCard = ({
   inCart,
   inWishlist,
 }) => {
-  const { addToCart, setTrue, cartState } = useCart()
-  const { wishlistState, removeFromWishlist } = useWishlist()
+  const { addToCart, cartState } = useCart()
+  const { addToWishlist, wishlistState, removeFromWishlist } = useWishlist()
+  const { toastDispatch } = useToast()
 
   return (
     <StyledProductCard>
@@ -29,16 +32,16 @@ const WishlistCard = ({
       <div className="about">
         <p className="product-price">₹ {price}</p>
         <Rating initialValue={rating} transition size={20} />
-        <a href="https://add/link" target="_blank" rel="noreferrer">
+        <Link to={`/product/${_id}`}>
           <Button varient="outline" className="btn btn-otl-default">
             View Details
           </Button>
-        </a>
+        </Link>
         <StyledIcons>
           {cartState.cart.find((item) => item._id === _id) ? (
-            <a href="#">
+            <Link to={'/cart'}>
               <MdShoppingCartCheckout />
-            </a>
+            </Link>
           ) : (
             <a
               href="#"
@@ -52,6 +55,14 @@ const WishlistCard = ({
                   rating,
                   inCart,
                 })
+                toastDispatch({
+                  type: 'ADD_TOAST',
+                  payload: {
+                    _id: _id,
+                    message: `${title} Added to Cart`,
+                    autoDelete: 3000,
+                  },
+                })
               }}
             >
               <AiOutlineShoppingCart />
@@ -61,24 +72,41 @@ const WishlistCard = ({
           {wishlistState.wishlist.find((item) => item._id === _id) ? (
             <a
               href="#"
-              onClick={() =>
+              onClick={() => {
                 removeFromWishlist(
                   { _id, title, price, categoryName, imgSrc, rating },
                   _id,
                 )
-              }
+                toastDispatch({
+                  type: 'ADD_TOAST',
+                  payload: {
+                    _id: _id,
+                    message: `${title} Removed from Wishlist`,
+                    autoDelete: 3000,
+                    theme: 'error',
+                  },
+                })
+              }}
             >
               <FaHeartBroken />
             </a>
           ) : (
             <a
               href="#"
-              onClick={() =>
-                addToCart(
+              onClick={() => {
+                addToWishlist(
                   { _id, title, price, categoryName, imgSrc, rating },
                   _id,
                 )
-              }
+                toastDispatch({
+                  type: 'ADD_TOAST',
+                  payload: {
+                    _id: _id,
+                    message: `${title} Added to Wishlist`,
+                    autoDelete: 3000,
+                  },
+                })
+              }}
             >
               <AiOutlineHeart />
             </a>
@@ -89,4 +117,4 @@ const WishlistCard = ({
   )
 }
 
-export default WishlistCard
+export default ProductCard
