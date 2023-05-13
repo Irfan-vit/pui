@@ -56,14 +56,7 @@ const Select = () => {
             </Link>
           </option>
           <option value="sports">
-            <Link
-              onClick={() => {
-                navigate('/product')
-                filterDispatch({ type: 'sports' })
-              }}
-            >
-              Sports
-            </Link>
+            <Link>Sports</Link>
           </option>
         </StyledSelect>
       </label>

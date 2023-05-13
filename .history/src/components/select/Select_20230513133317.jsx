@@ -45,25 +45,23 @@ const Select = () => {
               Fitness
             </Link>
           </option>
-          <option value="track">
-            <Link
-              onClick={() => {
-                navigate('/product')
-                filterDispatch({ type: 'track' })
-              }}
-            >
-              Track
-            </Link>
+          <option
+            value="track"
+            onClick={() => {
+              navigate('/product')
+              filterDispatch({ type: 'track' })
+            }}
+          >
+            Track
           </option>
-          <option value="sports">
-            <Link
-              onClick={() => {
-                navigate('/product')
-                filterDispatch({ type: 'sports' })
-              }}
-            >
-              Sports
-            </Link>
+          <option
+            value="sports"
+            onClick={() => {
+              navigate('/product')
+              filterDispatch({ type: 'sports' })
+            }}
+          >
+            Sports
           </option>
         </StyledSelect>
       </label>
