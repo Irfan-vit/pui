@@ -24,7 +24,7 @@ const SideBar = () => {
           <StyledFormHeader>
             <h4>Form</h4>
             <h4>
-              <a onClick={() => filterDispatch({ type: 'reset' })}>Clear</a>
+              <a onChange={() => filterDispatch({ type: 'reset' })}>Clear</a>
             </h4>
           </StyledFormHeader>
           <li>
