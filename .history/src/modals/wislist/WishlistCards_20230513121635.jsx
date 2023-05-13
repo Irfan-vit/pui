@@ -1,4 +1,9 @@
+import useFilteredProducts from '../../hooks/useFilteredProducts'
+
+import WishlistCard from '../../components/cards/WishlistCard'
 import { StyledProductCardsWrapper } from '../products/ProductCardsStyles'
+
+import { useCart } from '../../context/cartcontext'
 import { useWishlist } from '../../context/wishlistContext'
 import Empty from '../../components/animations/Loaders/Empty'
 import NavBar from '../../components/navBar/NavBar'
