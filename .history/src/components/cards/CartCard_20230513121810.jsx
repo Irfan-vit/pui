@@ -1,5 +1,5 @@
 import { StyledCartImage, StyledCartCardWrapper } from './styles/CartStyles'
-import { useCart } from '../../context/cartContext'
+import { useCart } from '../../context/cartcontext'
 
 const CartCard = ({
   _id,
